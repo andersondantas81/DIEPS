@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap');
+
+
+*{
+    font-family: 'Kanit', sans-serif;
+}
+
+#map { height: auto;
+    border-radius: 7px; 
+}
+
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+    background-color:#a14000; 
+}
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border: 2px solid #a14000;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    font-size: 16px;
+    color: #696969;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
+
+.texto-sidenav {
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.radio_button {
+    display: inline-block;
+    margin-right: 20px; 
+}
+
+.center-container-radio {
+    text-align: center;
+  }
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 90%;
+    width: 100%;
+    background: #F7F7F7;
+}
+
+label{
+    font-size: 13px;
+    color: #137338;
+    
+}
+.footer-padrao{
+    float: left;
+}
+.texto-icons-padrao{
+    color: #ffffff;
+    
+}
+.texto-sidenav-padrao{
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.texto-icons-graf{
+    color: #696969;
+}
+.texto-icons-secondary{
+    background: #696969;
+}
+
+.color-primary-padrao{
+    background: #696969;
+}
+.margin-cards-padrao{
+    margin: 0;
+}
+.texto-rodape-padrao{
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.size_numero_card{
+    font-size: 40px;
+    font-weight: bold
+}
+
+.texto-size-padrao{
+    color: #fff;
+    font-size: 1.1rem; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+    .texto-size-padrao {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte para telas menores */
+    }
+}
+
+.borda_cards{
+    border-radius: 7px;
+}
+
+.card1-graficos-padrao{  
+    border-radius: 7px;
+    margin: 5;
+    margin-bottom: 20px;
+}
+.card2-graficos-padrao{  
+    border-radius: 7px;
+    margin: 5;
+    height: 40vh;
+}
+.card3-graficos-padrao{  
+    border-radius: 7px;
+    margin: 5;
+    height: 93vh;
+
+}
+.card-status-padrao{
+    border-radius: 7px;
+    margin-top: 0%;
+    margin-bottom: 0%;    
+    background-color: rgb(28, 106, 93) !important ;
+
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color: #637688;
+    
+}
+.tabs .tab a {
+    color: #696969;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 24px;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-transition: color .28s ease, background-color .28s ease;
+    transition: color .28s ease, background-color .28s ease;
+}
+.tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #7f7f7f;
+    will-change: left, right;
+}
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: rgba(99, 118, 136,0.2);
+    outline: none;
+    border-radius: 7px;
+}
+.borda-tabs{
+    border-radius: 7px;
+}
+
+.nav-wrapper{
+    background: linear-gradient(90deg, rgba(46,188,76,1) 0%, rgba(47,188,156,1) 100%);
+}
+
+
+.tab a{
+    color: rgb(0,128,128) !important;
+}
+
+.indicator{
+    background-color: rgb(0,128,128) !important;
+}
+
+
+/* configuracoes da caixa do mapa*/
+
+path:hover, circle:hover {
+    stroke: #5b5c5e !important;
+    stroke-width:2px;
+    stroke-linejoin: round;
+    fill: #637688 !important;
+    cursor: pointer;
+  }
+  #path67 {
+    fill: none !important;
+    stroke: #637688 !important;
+    cursor: default;
+  }
+  #info-box-mapa {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: #DF6910;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: 'Kanit', sans-serif;
+    color:#ffffff;
+  }
+
+/* Estilos para o cabeçalho */
+.header-gradient {
+    background: linear-gradient(90deg, #22c55e 0%, #14b8a6 100%);
+}
+
+/* Estilos para os cards */
+.stat-card {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Estilos para os filtros */
+.filter-select {
+    transition: all 0.2s ease;
+}
+
+.filter-select:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+/* Estilos para o mapa */
+#mapaContainer {
+    min-height: 300px;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+}
+
+/* Estilos para os gráficos */
+canvas {
+    max-height: 300px;
+}
