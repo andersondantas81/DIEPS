@@ -178,7 +178,7 @@ const configBarra = {
 
 // Função específica para inicializar o dropdown de Ano
 function initializeAnoDropdown(tags) {
-    let selectedYear = '2024'; // Set default selected year
+    let selectedYear = '2024'; // Set default year to 2024
     let showList = false;
 
     const dropdownButton = document.getElementById('dropdownButtonAno');
@@ -259,9 +259,8 @@ function initializeAnoDropdown(tags) {
     }
 
     // Renderizar os anos iniciais e selecionar 2024 por padrão
-    buttonText.textContent = '2024'; // Set initial button text
     renderYears();
-    selectYear('2024');
+    selectYear('2024'); // Set default year to 2024
 
     return {
         getValue: () => selectedYear,
