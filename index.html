@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
+<head>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIEPS</title>
     <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="public/ascoi/libs/tailwind/output.css" rel="stylesheet"> -->
+    <link href="public/ascoi/libs/tailwind/output.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="vanilla/css/global.public.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="./output.css" rel="stylesheet">
@@ -30,7 +30,7 @@
                 </button>
             </div>
 
-            <div class="flex flex-wrap gap-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2">
                 <!-- Filtro ANO -->
                 <div class="relative flex-1 min-w-[150px]">
                     <label class="block text-xs font-medium text-gray-700 mb-0.5">Ano</label>
@@ -81,6 +81,37 @@
                     </div>
                 </div>
 
+                <!-- Filtro TIPO DE CURSOS -->
+                <div class="relative flex-1 min-w-[200px]">
+                    <label class="block text-xs font-medium text-gray-700 mb-0.5">Tipo de Cursos</label>
+                    <div class="relative">
+                        <button id="dropdownButtonCursos"
+                            class="w-full flex items-center justify-between px-2 py-1.5 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-green-500 text-sm">
+                            <span id="buttonTextCursos" class="text-gray-700 truncate">Todos</span>
+                            <i class="fas fa-chevron-down text-gray-500 text-xs"></i>
+                        </button>
+                        <div id="dropdownMenuCursos"
+                            class="hidden absolute z-20 mt-1 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <div class="py-1">
+                                <div class="px-2 py-1.5 border-b border-gray-200">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" id="selectAllCursos"
+                                            class="h-3 w-3 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                        <span class="ml-2 text-xs text-gray-700">Selecionar Todos</span>
+                                    </label>
+                                </div>
+                                <div class="px-2 py-1.5">
+                                    <input type="text" id="searchInputCursos" placeholder="Pesquisar..."
+                                        class="w-full px-2 py-1.5 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-green-500 text-xs">
+                                </div>
+                                <div id="tagListCursos" class="max-h-40 overflow-y-auto">
+                                    <!-- Opções serão adicionadas dinamicamente -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Filtro CURSOS -->
                 <div class="relative flex-1 min-w-[200px]">
                     <label class="block text-xs font-medium text-gray-700 mb-0.5">Cursos</label>
@@ -111,9 +142,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <!-- Filtro PROFISSÃO -->
                 <div class="relative flex-1 min-w-[150px]">
                     <label class="block text-xs font-medium text-gray-700 mb-0.5">Profissão</label>
@@ -184,7 +212,7 @@
             <div
                 class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full flex flex-col justify-between items-center">
                 <h3 class="text-sm text-gray-600 font-semibold mb-2">VAGAS OFERTADAS</h3>
-                <p class="text-4xl font-bold text-green-600" id="total_vagas">1.482</p>
+                <p class="text-4xl font-bold text-green-600" id="vagas_ofertadas">1.482</p>
                 <div class="mt-2 text-sm text-gray-500">
                     <span class="text-green-500"><i class="fas fa-arrow-up"></i> 12%</span> em relação ao ano anterior
                 </div>
@@ -193,7 +221,7 @@
             <div
                 class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full flex flex-col justify-between items-center">
                 <h3 class="text-sm text-gray-600 font-semibold mb-2">Nº DE CURSOS</h3>
-                <p class="text-4xl font-bold text-green-600" id="total_cursos">428</p>
+                <p class="text-4xl font-bold text-green-600" id="numero_cursos">428</p>
                 <div class="mt-2 text-sm text-gray-500">
                     <span class="text-green-500"><i class="fas fa-arrow-up"></i> 8%</span> em relação ao ano anterior
                 </div>
@@ -202,7 +230,7 @@
             <div
                 class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full flex flex-col justify-between items-center">
                 <h3 class="text-sm text-gray-600 font-semibold mb-2">Nº DE INSCRITOS</h3>
-                <p class="text-4xl font-bold text-green-600" id="total_inscritos">2.245</p>
+                <p class="text-4xl font-bold text-green-600" id="numero_inscritos">2.245</p>
                 <div class="mt-2 text-sm text-gray-500">
                     <span class="text-green-500"><i class="fas fa-arrow-up"></i> 15%</span> em relação ao ano anterior
                 </div>
@@ -211,7 +239,7 @@
             <div
                 class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow h-full flex flex-col justify-between items-center">
                 <h3 class="text-sm text-gray-600 font-semibold mb-2">CONCLUDENTES</h3>
-                <p class="text-4xl font-bold text-green-600" id="total_concludentes">1.876</p>
+                <p class="text-4xl font-bold text-green-600" id="concludentes">1.876</p>
                 <div class="mt-2 text-sm text-gray-500">
                     <span class="text-green-500"><i class="fas fa-arrow-up"></i> 10%</span> em relação ao ano anterior
                 </div>
@@ -234,7 +262,7 @@
                     </select>
                 </div>
                 <div class="relative h-80 w-full">
-                    <canvas id="barChart" class="w-full h-full"></canvas>
+                    <canvas id="grafico-temporal" class="w-full h-full"></canvas>
                 </div>
             </div>
             <!-- Mapa -->
@@ -2548,14 +2576,12 @@
 
     </main>
 
-    <footer-component></footer-component>
-
-    <script src="./Componentes/header.js"></script>
+    <footer-component></footer-component>    <script src="./Componentes/header.js"></script>
     <script src="./Componentes/footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
-    <script src="./js/index.js" type="module"></script>
+    <script type="module" src="./js/app.js"></script>
 
     <!-- Code injected by live-server -->
     <script>
